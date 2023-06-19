@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_411_3P_EX.Views.EditClassPage"
+             Title="EditClassPage">
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#001E62</Color>
+        <Color x:Key="Secondary">#C8102E</Color>
+        <Color x:Key="Tertiary">#989cac</Color>
+        <Color x:Key="Quaternary">#e0e8ff</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <LinearGradientBrush
+            EndPoint="0,1">
+            <GradientStop
+                Color="White"
+                Offset="0.0"/>
+            <GradientStop
+                Color="{StaticResource Quaternary}"
+                Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+    <AbsoluteLayout>
+        <VerticalStackLayout
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout
+                BackgroundColor="{StaticResource Secondary}">
+                <ImageButton
+                    Source="undo"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    WidthRequest="40"
+                    Margin="10"
+                    Command="{Binding backClicked}"/>
+            </VerticalStackLayout>
+            <Label 
+                Text="{Binding name}"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontFamily="Indivisa"
+                Margin="0,10,0,5"
+                FontSize="28"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    Text="calificación: "
+                    FontFamily="Indivisa"/>
+                <Label
+                    Text="{Binding grade}"
+                    FontFamily="Indivisa"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout
+                x:Name="gradingItemsStackLayout"
+                Margin="15"
+                Spacing="7">
+
+            </VerticalStackLayout>
+
+    </VerticalStackLayout>
+
+        <ImageButton
+                AbsoluteLayout.LayoutBounds="0.9,0.95,50,50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="{StaticResource Secondary}"
+                Padding="5"
+                CornerRadius="20"
+                Source="add"
+                Command="{Binding addGradingItemClicked}"/>
+    </AbsoluteLayout>
+</ContentPage>

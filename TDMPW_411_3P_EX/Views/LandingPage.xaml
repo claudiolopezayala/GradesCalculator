@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_411_3P_EX.Views.LandingPage"
+             Title="LandingPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#001E62</Color>
+        <Color x:Key="Secondary">#C8102E</Color>
+        <Color x:Key="Tertiary">#989cac</Color>
+        <Color x:Key="Quaternary">#e0e8ff</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <LinearGradientBrush
+            EndPoint="0,1">
+            <GradientStop
+                Color="White"
+                Offset="0.0"/>
+            <GradientStop
+                Color="{StaticResource Quaternary}"
+                Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="0.9*,0.1*"
+        Margin="15">
+
+        <Image
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="300"
+            Source="sallebajio"/>
+        
+        <Button
+            Grid.Column="0"
+            Grid.Row="1"
+            Text="Clacular mis calificiones"
+            FontFamily="Indivisa"
+            FontSize="22"
+            CornerRadius="100"
+            BackgroundColor="{StaticResource Primary}"
+            TextColor="White"
+            Command="{Binding seeGradesClicked}"/>
+    </Grid>
+</ContentPage>
